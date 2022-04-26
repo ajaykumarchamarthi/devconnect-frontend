@@ -23,7 +23,7 @@ function UserQuestions() {
       setQuestions(filteredQuestion);
     };
     loadQuestions();
-  }, []);
+  }, [userId]);
 
   return (
     <>
