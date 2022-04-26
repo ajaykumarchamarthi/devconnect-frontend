@@ -84,7 +84,7 @@ const ModalOverlay = (props) => {
             cols="50"
             id="questionExplanation"
             name="questionExplanation"
-            {...register("question", { required: true })}
+            {...register("questionExplanation", { required: true })}
           />
           <p className={classes.error}>{errors.questionExplanation?.message}</p>
         </div>
