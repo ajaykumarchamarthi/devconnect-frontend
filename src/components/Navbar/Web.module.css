@@ -1,0 +1,37 @@
+.webOptions {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+
+.webOptions li {
+  list-style: none;
+}
+
+.webOptions li a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  margin-left: 1.2em;
+}
+
+.webOptions li:last-child {
+  margin-right: 0.3em;
+  margin-left: 1em;
+}
+
+a.active {
+  border-bottom: 3px solid white;
+}
+
+.btn {
+  padding: 0.4em 1.2em;
+  background-color: #124b94;
+  color: white;
+  cursor: pointer;
+  border-radius: 1em;
+}
+
+.btn:hover {
+  background-color: #396aaa;
+}

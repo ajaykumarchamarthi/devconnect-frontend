@@ -1,0 +1,67 @@
+.mobile {
+  background: #1170ec;
+  opacity: 0.9;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 100vh;
+  width: 60vw;
+  padding: 0 0.75rem;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  cursor: pointer;
+  margin-top: 1em;
+}
+
+.mobileOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.mobileOptions {
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileOptions li {
+  list-style: none;
+}
+
+.mobileOptions li a {
+  text-decoration: none;
+  color: white;
+}
+
+.mobileoptions li a:hover {
+  margin-bottom: 1px solid white;
+}
+
+a.active {
+  border-bottom: 3px solid white;
+}
+
+.btn {
+  padding: 0.4em 1.2em;
+  background-color: #124b94;
+  color: white;
+  cursor: pointer;
+  border-radius: 1em;
+}
+
+.btn:hover {
+  background-color: #396aaa;
+}

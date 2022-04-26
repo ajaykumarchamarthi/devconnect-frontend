@@ -1,0 +1,23 @@
+.userQuestion {
+  border: 1px solid #333;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.userQuestion > p {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.questionsList {
+  padding: 0.5em;
+}
+
+.question:hover {
+  cursor: pointer;
+  color: #0a95ff;
+}
+
+.noQuestion {
+  text-align: center;
+}

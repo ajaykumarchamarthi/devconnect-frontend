@@ -1,0 +1,17 @@
+.container {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex-grow: 1;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper {
+    width: 97%;
+  }
+}

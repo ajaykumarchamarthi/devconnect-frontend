@@ -1,0 +1,75 @@
+.Container {
+  display: flex;
+  margin: 1em 0;
+  border: 1px solid #333;
+  padding: 1em 0;
+}
+
+.answer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  margin: 0 0.1em;
+}
+
+.answerContainer {
+  width: 100%;
+  padding: 0 1em 0 0;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.likeContainer {
+  text-align: center;
+  width: 7em;
+  margin: 0 0.5em 0 0;
+  font-size: 0.8em;
+}
+
+.answeredBy p {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5em 1em;
+  color: #50b3ff;
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment {
+  margin: 0.5em 0;
+}
+
+.hr {
+  width: 99%;
+}
+
+.btn {
+  margin: 0.3em 0;
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  width: 10em;
+  background: #0a95ff;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #0074cc;
+}
+
+.name {
+  color: #50b3ff;
+}
+
+.answerContent {
+  white-space: pre-line;
+  white-space: pre-wrap;
+}

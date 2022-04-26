@@ -1,0 +1,43 @@
+.questionContainer {
+  border: 1px solid grey;
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+
+.aboutQuestion {
+  display: flex;
+  padding: 0.25em;
+  justify-content: space-between;
+}
+
+.question {
+  margin: 1em 0;
+}
+
+.questionExplanation {
+  white-space: pre-line;
+  white-space: pre-wrap;
+}
+
+.questionTitle {
+  cursor: pointer;
+}
+
+.tag {
+  border: none;
+  padding: 0.25em 0.5em;
+  border-radius: 0.5em;
+  background: #d0e3f1;
+  color: #2c77b6;
+  cursor: pointer;
+}
+
+.answers {
+  background-color: #48a868;
+  padding: 0.25em 0.75em;
+  color: white;
+  border-radius: 1em;
+}
+.name {
+  color: #59a2ff;
+}

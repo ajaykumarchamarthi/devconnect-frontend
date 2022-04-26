@@ -1,0 +1,56 @@
+.outerContainer h3 {
+  text-align: center;
+  margin: 1em 0;
+}
+
+.container {
+  border: 1px solid #333;
+  padding: 1em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+}
+
+.company h5 {
+  text-align: center;
+}
+
+.company {
+  margin-right: 1em;
+}
+
+.img {
+  height: 80px;
+  width: 80px;
+}
+
+.highlight {
+  font-weight: 600;
+}
+
+.description {
+  /* line-height: 1.4em; */
+}
+
+.toApply {
+  margin-top: 0.5em;
+}
+
+.redirect {
+  color: blue;
+  cursor: pointer;
+}
+
+.redirect:hover {
+  color: violet;
+}
+
+@media screen and (min-width: 440px) {
+  .container {
+    max-width: 700px;
+    justify-content: space-evenly;
+    margin: 1em auto;
+    font-size: 1rem;
+  }
+}
