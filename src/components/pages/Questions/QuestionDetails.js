@@ -25,7 +25,6 @@ function QuestionDetails() {
   // }).format(new Date(answer.createdAt))}
 
   useEffect(() => {
-    console.log(id);
     const loadQuestions = async () => {
       const response = await axios.get(
         "https://devconnect-backendapp.herokuapp.com/api/v1/questions/getAllQuestions"

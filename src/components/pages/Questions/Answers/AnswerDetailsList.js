@@ -15,7 +15,6 @@ function AnswerDetailsList({ id }) {
   const authCtx = useContext(AuthContext);
 
   const token = Cookies.get("jwt");
-  console.log("token", token);
 
   const userId = localStorage.getItem("userId");
 

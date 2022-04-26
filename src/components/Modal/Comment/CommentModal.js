@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import ReactDom from "react-dom";
 import Cookies from "js-cookie";
 import classes from "./CommentModal.module.css";
@@ -12,8 +11,6 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
-  const history = useHistory();
-
   const schema = yup.object().shape({
     comment: yup.string().required("Comment is required"),
   });
@@ -55,7 +52,6 @@ const ModalOverlay = (props) => {
       })
       .then((data) => {
         alert(data.status);
-        history.replace("/profile");
       })
       .catch((err) => alert(err.message));
   };
@@ -75,7 +71,9 @@ const ModalOverlay = (props) => {
         </div>
 
         <div className={classes.btn}>
-          <button type="submit">Post Comment</button>
+          <button type="submit" onClick={props.onConfirm}>
+            Post Comment
+          </button>
         </div>
       </form>
     </div>
@@ -83,8 +81,6 @@ const ModalOverlay = (props) => {
 };
 
 function CommentModal(props) {
-  console.log("Comment Modal");
-
   return (
     <React.Fragment>
       {ReactDom.createPortal(
