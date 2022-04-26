@@ -23,9 +23,9 @@
   border: none;
   display: inline-block;
   padding: 0.75rem 2.25rem;
-  border: 1px solid #ff5574;
+  border: 1px solid #0074cc;
   border-radius: 30px;
-  background-color: #ff5574;
+  background-color: #0074cc;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.875rem;
@@ -56,7 +56,7 @@
 }
 
 .options span {
-  color: #ff5574;
+  color: #0074cc;
   cursor: pointer;
 }
 
