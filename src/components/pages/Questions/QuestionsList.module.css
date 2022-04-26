@@ -15,6 +15,7 @@
 }
 
 .questionExplanation {
+  margin-top: 1em;
   white-space: pre-line;
   white-space: pre-wrap;
 }
