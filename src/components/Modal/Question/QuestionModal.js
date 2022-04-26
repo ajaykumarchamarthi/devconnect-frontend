@@ -15,7 +15,10 @@ const ModalOverlay = (props) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
-    question: yup.string().required("Qusetion is required"),
+    question: yup.string().required("Question is required"),
+    questionExplanation: yup
+      .string()
+      .required("Question Explanation is required"),
     tag: yup.string().required("Tag is required"),
   });
 
@@ -27,7 +30,7 @@ const ModalOverlay = (props) => {
 
   const submitHandler = (data, event) => {
     event.preventDefault();
-    const { question, tag } = data;
+    const { question, tag, questionExplanation } = data;
 
     const token = Cookies.get("jwt");
 
@@ -41,7 +44,7 @@ const ModalOverlay = (props) => {
           "content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ question, tag, userId }),
+        body: JSON.stringify({ question, questionExplanation, tag, userId }),
       }
     )
       .then((res) => {
@@ -66,13 +69,24 @@ const ModalOverlay = (props) => {
         <div>
           <label htmlFor="question">Question</label>
           <textarea
-            rows="10"
+            rows="3"
             cols="50"
             id="question"
             name="question"
             {...register("question", { required: true })}
           />
           <p className={classes.error}>{errors.question?.message}</p>
+        </div>
+        <div>
+          <label htmlFor="questionExplanation">Question Explanation</label>
+          <textarea
+            rows="10"
+            cols="50"
+            id="questionExplanation"
+            name="questionExplanation"
+            {...register("question", { required: true })}
+          />
+          <p className={classes.error}>{errors.questionExplanation?.message}</p>
         </div>
         <div>
           <label htmlFor="tag">Tag</label>
