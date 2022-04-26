@@ -25,7 +25,7 @@ function Profile() {
       setUser(filteredUser);
     };
     loadUsers();
-  }, []);
+  }, [userId]);
 
   const openHandler = (e) => {
     e.preventDefault();
