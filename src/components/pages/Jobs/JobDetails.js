@@ -40,7 +40,7 @@ function JobDetails() {
           <div className={classes.jobDetails}>
             <ul>
               <li>
-                <span className={classes.key}>Role</span>{" "}
+                <span className={classes.key}>Role</span> -{" "}
                 {company.jobDescription}
               </li>
               <li>

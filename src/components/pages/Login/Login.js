@@ -58,6 +58,9 @@ function Login() {
   return (
     <div>
       <form onSubmit={handleSubmit(submitHandler)} className={classes.form}>
+        <p className={classes.testCredential}>
+          Test Credentials: ajayaj0302@gmail.com & ajay1234
+        </p>
         <div>
           <h3 className={classes.title}>Login</h3>
         </div>

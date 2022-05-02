@@ -9,6 +9,14 @@
   display: block;
 }
 
+.testCredential {
+  margin: 1em auto;
+}
+
+.title {
+  text-align: center;
+}
+
 .form input {
   margin-top: 0.2em;
   padding: 0.4em;
