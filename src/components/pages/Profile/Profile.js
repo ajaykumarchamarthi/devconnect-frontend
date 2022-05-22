@@ -44,7 +44,12 @@ function Profile() {
               <div className={classes.btn}>
                 <button onClick={openHandler}>Ask a question</button>
                 {authCtx.isLoggedIn ? (
-                  isOpen && <QuestionModal onConfirm={openHandler} />
+                  isOpen && (
+                    <QuestionModal
+                      onConfirm={openHandler}
+                      setIsOpen={setIsOpen}
+                    />
+                  )
                 ) : (
                   <AuthenticationModal onConfirm={openHandler} />
                 )}

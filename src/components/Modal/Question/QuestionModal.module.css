@@ -54,6 +54,15 @@
   font-size: 1.1rem;
 }
 
+.markdown {
+  width: 100%;
+  margin: 0.5em auto;
+
+  height: 15vh;
+  outline: none;
+  border: 1px solid red;
+}
+
 .error {
   color: red;
   margin-top: 0.2em;

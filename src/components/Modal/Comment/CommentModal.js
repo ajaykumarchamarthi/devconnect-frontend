@@ -15,7 +15,7 @@ const ModalOverlay = (props) => {
   const history = useHistory();
 
   const schema = yup.object().shape({
-    comment: yup.string().required("Comment is required"),
+    comments: yup.string().required("Comment is required"),
   });
 
   const {
@@ -26,7 +26,7 @@ const ModalOverlay = (props) => {
 
   const submitHandler = (data, event) => {
     event.preventDefault();
-    const { comment } = data;
+    const { comments } = data;
 
     const token = Cookies.get("jwt");
     const userId = localStorage.getItem("userId");
@@ -40,7 +40,7 @@ const ModalOverlay = (props) => {
           "content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ comment, userId, answerId }),
+        body: JSON.stringify({ comments, userId, answerId }),
       }
     )
       .then((res) => {
@@ -55,7 +55,8 @@ const ModalOverlay = (props) => {
       })
       .then((data) => {
         alert(data.status);
-        history.go("/");
+        props.setIsOpen(false);
+        history.replace("/");
       })
       .catch((err) => alert(err.message));
   };
@@ -63,15 +64,15 @@ const ModalOverlay = (props) => {
     <div className={classes.modal}>
       <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
         <div className={classes.div}>
-          <label htmlFor="comment">Comment</label>
+          <label htmlFor="comments">Comment</label>
           <textarea
             rows="10"
             cols="70"
-            id="comment"
-            name="comment"
-            {...register("comment", { required: true })}
+            id="comments"
+            name="comments"
+            {...register("comments", { required: true })}
           />
-          <p className={classes.error}>{errors.comment?.message}</p>
+          <p className={classes.error}>{errors.comments?.message}</p>
         </div>
 
         <div className={classes.btn}>
@@ -90,7 +91,11 @@ function CommentModal(props) {
         document.getElementById("backdrop-root")
       )}
       {ReactDom.createPortal(
-        <ModalOverlay onConfirm={props.onConfirm} answerId={props.answerId} />,
+        <ModalOverlay
+          onConfirm={props.onConfirm}
+          answerId={props.answerId}
+          setIsOpen={props.setIsOpen}
+        />,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>

@@ -59,7 +59,8 @@ const ModalOverlay = (props) => {
       })
       .then((data) => {
         alert(data.status);
-        history.go("/profile");
+        props.setIsOpen(false);
+        history.replace("/");
       })
       .catch((err) => alert(err.message));
   };
@@ -67,9 +68,9 @@ const ModalOverlay = (props) => {
     <div className={classes.modal}>
       <form className={classes.form} onSubmit={handleSubmit(submitHandler)}>
         <div>
-          <label htmlFor="question">Question</label>
+          <label htmlFor="question">Question Title</label>
           <textarea
-            rows="3"
+            rows="2"
             cols="50"
             id="question"
             name="question"
@@ -80,6 +81,7 @@ const ModalOverlay = (props) => {
         <div>
           <label htmlFor="questionExplanation">Question Explanation</label>
           <textarea
+            autoFocus
             rows="10"
             cols="50"
             id="questionExplanation"
@@ -114,7 +116,10 @@ function QuestionModal(props) {
         document.getElementById("backdrop-root")
       )}
       {ReactDom.createPortal(
-        <ModalOverlay onConfirm={props.onConfirm} />,
+        <ModalOverlay
+          onConfirm={props.onConfirm}
+          setIsOpen={props.setIsOpen}
+        />,
         document.getElementById("overlay-root")
       )}
     </React.Fragment>

@@ -19,17 +19,16 @@ function AnswerDetailsList({ id }) {
   const userId = localStorage.getItem("userId");
 
   useEffect(() => {
-    console.log("Question id", id);
     const loadAnswers = async () => {
       const response = await axios.get(
-        "https://devconnect-backendapp.herokuapp.com/api/v1/answers/getAllAnswers"
+        "https://devconnect-backendapp.herokuapp.com/api/v1/answers/getAllAnswers?sort=-likes"
       );
       const { data } = response.data;
-      console.log("Answer", data.answers);
+
       const filteredAnswer = data.answers.filter(
         (answer) => answer.question._id === id
       );
-      console.log("Filtered Answer", filteredAnswer);
+
       setAnswers(filteredAnswer);
     };
 
@@ -147,7 +146,7 @@ function AnswerDetailsList({ id }) {
                     return (
                       <div key={comment._id}>
                         <p className={classes.comment}>
-                          {comment.comment} -{" "}
+                          {comment.comments} -{" "}
                           <span className={classes.name}>
                             {comment.user.name}{" "}
                           </span>
@@ -172,6 +171,7 @@ function AnswerDetailsList({ id }) {
                   {isOpen && (
                     <CommentModal
                       onConfirm={openHandler}
+                      setIsOpen={setIsOpen}
                       answerId={answer._id}
                     />
                   )}

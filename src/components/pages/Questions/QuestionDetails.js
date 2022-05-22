@@ -51,11 +51,6 @@ function QuestionDetails() {
         {question.map((question) => {
           return (
             <div key={question._id}>
-              {/* <div className={classes.aboutQuestion}>
-              <p className={classes.answers}>
-                {question.answers.length} - answers
-              </p>
-            </div> */}
               <div className={classes.question}>
                 <h3 className={classes.questionTitle}>{question.question}</h3>
                 <p className={classes.questionExplanation}>
@@ -84,7 +79,11 @@ function QuestionDetails() {
                   Say Answer
                 </button>
                 {authCtx.isLoggedIn && isOpen && (
-                  <AnswerModal onConfirm={openHandler} questionId={id} />
+                  <AnswerModal
+                    onConfirm={openHandler}
+                    questionId={id}
+                    setIsOpen={setIsOpen}
+                  />
                 )}
               </div>
             </div>

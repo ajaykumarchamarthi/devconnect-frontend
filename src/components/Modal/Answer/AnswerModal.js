@@ -56,6 +56,7 @@ const ModalOverlay = (props) => {
       })
       .then((data) => {
         alert(data.status);
+        props.setIsOpen(false);
         history.replace("/");
       })
       .catch((err) => alert(err.message));
@@ -93,6 +94,7 @@ function AnswerModal(props) {
         <ModalOverlay
           onConfirm={props.onConfirm}
           questionId={props.questionId}
+          setIsOpen={props.setIsOpen}
         />,
         document.getElementById("overlay-root")
       )}
