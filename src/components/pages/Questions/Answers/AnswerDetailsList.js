@@ -14,6 +14,9 @@ function AnswerDetailsList({ id }) {
 
   const authCtx = useContext(AuthContext);
 
+  const reRenderAnswer = authCtx.isAnswerSubmitted;
+  const reRenderComment = authCtx.isCommentSubmitted;
+
   const token = Cookies.get("jwt");
 
   const userId = localStorage.getItem("userId");
@@ -33,7 +36,7 @@ function AnswerDetailsList({ id }) {
     };
 
     loadAnswers();
-  }, [like, id]);
+  }, [like, id, reRenderAnswer, reRenderComment]);
 
   const openHandler = (event) => {
     event.preventDefault();

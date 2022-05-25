@@ -1,5 +1,5 @@
-import React from "react";
-import { useHistory } from "react-router-dom";
+import React, { useContext } from "react";
+import AuthContext from "../../../store/auth-context";
 import ReactDom from "react-dom";
 import Cookies from "js-cookie";
 import classes from "./QuestionModal.module.css";
@@ -12,7 +12,7 @@ const Backdrop = (props) => {
 };
 
 const ModalOverlay = (props) => {
-  const history = useHistory();
+  const submitCtx = useContext(AuthContext);
 
   const schema = yup.object().shape({
     question: yup.string().required("Question is required"),
@@ -60,7 +60,7 @@ const ModalOverlay = (props) => {
       .then((data) => {
         alert(data.status);
         props.setIsOpen(false);
-        history.replace("/");
+        submitCtx.toggleQuestionSubmitHandler();
       })
       .catch((err) => alert(err.message));
   };

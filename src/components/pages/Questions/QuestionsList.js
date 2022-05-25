@@ -24,7 +24,15 @@ function QuestionsList({
         >
           {question}
         </h3>
-        <p className={classes.questionExplanation}>{questionExplanation}</p>
+        <p className={classes.questionExplanation}>
+          {questionExplanation.slice(0, 100)}...{" "}
+          <span
+            className={classes.readMore}
+            onClick={() => history.push(`/question/${id}`)}
+          >
+            read more
+          </span>
+        </p>
       </div>
       <div className={classes.aboutQuestion}>
         <span className={classes.tag}>{tag}</span>

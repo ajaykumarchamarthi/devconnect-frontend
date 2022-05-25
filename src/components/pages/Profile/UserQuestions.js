@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import AuthContext from "../../../store/auth-context";
 import axios from "axios";
 import classes from "./UserQuestion.module.css";
 
 function UserQuestions() {
   const [questions, setQuestions] = useState([]);
+
+  const submitCtx = useContext(AuthContext);
+
+  const reRender = submitCtx.isQuestionSubmitted;
 
   const history = useHistory();
 
@@ -23,7 +28,7 @@ function UserQuestions() {
       setQuestions(filteredQuestion);
     };
     loadQuestions();
-  }, [userId]);
+  }, [userId, reRender]);
 
   return (
     <>
